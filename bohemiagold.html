@@ -1,0 +1,1277 @@
+<!doctype html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>BOHEMIA GOLD | Premium Crystal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="bohemiagold.css">
+    <link rel="icon" type="image/png" href="./../Images/logo.png">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: Inter, sans-serif;
+        background: #0b0b0b;
+        color: #fff;
+      }
+
+      /* ================= HEADER ================= */
+
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 20px 6%;
+
+        background: rgba(5, 5, 5, 0.92);
+        backdrop-filter: blur(15px);
+
+        border-bottom: 1px solid rgba(212, 175, 93, 0.2);
+      }
+
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 27px;
+        letter-spacing: 4px;
+        color: #d8b66a;
+      }
+
+      nav {
+        display: flex;
+        gap: 30px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+      }
+
+      nav a:hover {
+        color: #d8b66a;
+      }
+
+      .cart-button {
+        position: relative;
+
+        border: 1px solid #d8b66a;
+        background: transparent;
+        color: #d8b66a;
+
+        padding: 11px 18px;
+
+        cursor: pointer;
+      }
+
+      .cart-count {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+
+        width: 20px;
+        height: 20px;
+
+        border-radius: 50%;
+
+        background: #d8b66a;
+        color: #111;
+
+        font-size: 11px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ================= HERO ================= */
+
+      .hero {
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+
+        padding: 150px 8% 100px;
+
+        background:
+          linear-gradient(rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.88)),
+          url("https://www.bohemiagoldcrystal.com/img/cms/IMG_20210513_131101.jpg");
+
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-content {
+        max-width: 760px;
+      }
+
+      .hero-small {
+        color: #d8b66a;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-bottom: 20px;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(55px, 8vw, 100px);
+        line-height: 0.92;
+        margin-bottom: 30px;
+      }
+
+      .hero p {
+        color: #ddd;
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 650px;
+      }
+
+      .gold-btn {
+        display: inline-block;
+
+        margin-top: 30px;
+
+        padding: 15px 27px;
+
+        background: #d8b66a;
+        color: #111;
+
+        text-decoration: none;
+
+        font-weight: 600;
+
+        border: none;
+        cursor: pointer;
+      }
+
+      .gold-btn:hover {
+        background: #f0d38d;
+      }
+
+      /* ================= SECTIONS ================= */
+
+      section {
+        padding: 100px 7%;
+      }
+
+      .section-label {
+        color: #d8b66a;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 12px;
+        margin-bottom: 12px;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 55px;
+        margin-bottom: 15px;
+      }
+
+      .section-description {
+        color: #999;
+        max-width: 650px;
+        line-height: 1.8;
+      }
+
+      /* ================= SHOP ================= */
+
+      .shop {
+        background: #101010;
+      }
+
+      .shop-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .search {
+        background: #171717;
+        border: 1px solid #333;
+        padding: 14px 18px;
+        color: white;
+        width: 270px;
+      }
+
+      .categories {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 35px;
+      }
+
+      .category {
+        padding: 11px 18px;
+
+        background: #171717;
+
+        border: 1px solid #333;
+
+        color: #aaa;
+
+        cursor: pointer;
+      }
+
+      .category.active,
+      .category:hover {
+        background: #d8b66a;
+        color: #111;
+        border-color: #d8b66a;
+      }
+
+      /* ================= PRODUCTS ================= */
+
+      .products {
+        margin-top: 35px;
+
+        display: grid;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        gap: 20px;
+      }
+
+      .product {
+        background: #151515;
+
+        border: 1px solid #292929;
+
+        overflow: hidden;
+
+        transition: 0.3s;
+      }
+
+      .product:hover {
+        transform: translateY(-7px);
+        border-color: #d8b66a;
+      }
+
+      .product-image {
+        width: 100%;
+        height: 290px;
+
+        object-fit: cover;
+
+        display: block;
+      }
+
+      .product-info {
+        padding: 22px;
+      }
+
+      .product-category {
+        color: #a68a52;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      .product h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 23px;
+        margin: 10px 0;
+      }
+
+      .price {
+        color: #d8b66a;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 17px;
+      }
+
+      .add {
+        width: 100%;
+
+        padding: 12px;
+
+        background: #d8b66a;
+
+        border: 0;
+
+        color: #111;
+
+        font-weight: 700;
+
+        cursor: pointer;
+      }
+
+      .add:hover {
+        background: #f0d38d;
+      }
+
+      /* ================= ABOUT ================= */
+
+      .about {
+        background: #080808;
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+
+      .about img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+      }
+
+      .about-text p {
+        color: #aaa;
+        line-height: 2;
+        margin-top: 20px;
+      }
+
+      /* ================= CONTACT ================= */
+
+      .contact {
+        background: #111;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+        margin-top: 40px;
+      }
+
+      .contact-card {
+        background: #171717;
+        padding: 35px;
+        border: 1px solid #292929;
+      }
+
+      .contact-item {
+        margin-bottom: 25px;
+      }
+
+      .contact-item strong {
+        display: block;
+        color: #d8b66a;
+        margin-bottom: 7px;
+      }
+
+      .contact-item a {
+        color: #ddd;
+        text-decoration: none;
+      }
+
+      .contact-item a:hover {
+        color: #d8b66a;
+      }
+
+      /* ================= CART ================= */
+
+      .cart {
+        position: fixed;
+
+        top: 0;
+        right: -450px;
+
+        width: 420px;
+        max-width: 100%;
+
+        height: 100vh;
+
+        background: #111;
+
+        z-index: 3000;
+
+        padding: 30px;
+
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+
+        transition: 0.4s;
+
+        overflow-y: auto;
+      }
+
+      .cart.open {
+        right: 0;
+      }
+
+      .cart-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        border-bottom: 1px solid #333;
+
+        padding-bottom: 20px;
+      }
+
+      .cart-header h2 {
+        font-family: "Playfair Display", serif;
+      }
+
+      .close {
+        background: none;
+        border: 0;
+        color: white;
+        font-size: 25px;
+        cursor: pointer;
+      }
+
+      .cart-item {
+        display: flex;
+        gap: 15px;
+
+        padding: 20px 0;
+
+        border-bottom: 1px solid #292929;
+      }
+
+      .cart-item img {
+        width: 75px;
+        height: 75px;
+
+        object-fit: cover;
+      }
+
+      .cart-item-info {
+        flex: 1;
+      }
+
+      .cart-item-info h4 {
+        margin-bottom: 7px;
+      }
+
+      .cart-item-price {
+        color: #d8b66a;
+      }
+
+      .quantity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        margin-top: 10px;
+      }
+
+      .quantity button {
+        width: 25px;
+        height: 25px;
+
+        background: #222;
+        color: white;
+
+        border: 1px solid #444;
+
+        cursor: pointer;
+      }
+
+      .remove {
+        background: none;
+        border: 0;
+        color: #777;
+        cursor: pointer;
+      }
+
+      .cart-total {
+        margin-top: 30px;
+
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 20px;
+      }
+
+      .checkout {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+
+        border: 0;
+
+        background: #d8b66a;
+        color: #111;
+
+        font-weight: 700;
+
+        cursor: pointer;
+      }
+
+      .empty {
+        color: #777;
+        text-align: center;
+        padding: 60px 0;
+      }
+
+      /* ================= CHECKOUT MODAL ================= */
+
+      .modal {
+        position: fixed;
+
+        inset: 0;
+
+        background: rgba(0, 0, 0, 0.75);
+
+        z-index: 4000;
+
+        display: none;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 20px;
+      }
+
+      .modal.active {
+        display: flex;
+      }
+
+      .modal-box {
+        width: 500px;
+        max-width: 100%;
+
+        background: #151515;
+
+        padding: 35px;
+
+        border: 1px solid #d8b66a;
+      }
+
+      .modal-box h2 {
+        font-family: "Playfair Display", serif;
+        margin-bottom: 25px;
+      }
+
+      .modal-box input,
+      .modal-box textarea {
+        width: 100%;
+
+        margin-bottom: 14px;
+
+        padding: 14px;
+
+        background: #0d0d0d;
+
+        border: 1px solid #333;
+
+        color: white;
+      }
+
+      .modal-box textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      .modal-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .cancel {
+        flex: 1;
+        padding: 14px;
+
+        background: #222;
+        border: 1px solid #444;
+
+        color: white;
+
+        cursor: pointer;
+      }
+
+      .submit {
+        flex: 1;
+        padding: 14px;
+
+        background: #d8b66a;
+        border: 0;
+
+        color: #111;
+
+        font-weight: 700;
+
+        cursor: pointer;
+      }
+
+      /* ================= FOOTER ================= */
+
+      footer {
+        background: #050505;
+
+        padding: 30px 7%;
+
+        display: flex;
+        justify-content: space-between;
+
+        color: #777;
+      }
+
+      footer span {
+        color: #d8b66a;
+      }
+
+      /* ================= MOBILE ================= */
+
+      @media (max-width: 1000px) {
+        .products {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 700px) {
+        nav {
+          padding: 17px 5%;
+        }
+
+        nav {
+          gap: 10px;
+        }
+
+        nav a {
+          display: none;
+        }
+
+        .logo {
+          font-size: 21px;
+        }
+
+        .hero {
+          padding: 140px 7% 80px;
+        }
+
+        .hero h1 {
+          font-size: 55px;
+        }
+
+        section {
+          padding: 75px 7%;
+        }
+
+        .section-title {
+          font-size: 42px;
+        }
+
+        .products {
+          grid-template-columns: 1fr;
+        }
+
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .about img {
+          height: 300px;
+        }
+
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </style>
+  <body>
+    <!-- HEADER -->
+
+    <header>
+      <div class="logo">BOHEMIA GOLD</div>
+
+      <nav>
+        <a href="#home"> Ana səhifə </a>
+
+        <a href="#shop"> Mağaza </a>
+
+        <a href="#about"> Haqqımızda </a>
+
+        <a href="#contact"> Əlaqə </a>
+      </nav>
+
+      <button class="cart-button" onclick="openCart()">
+        🛍️ Səbət
+
+        <span class="cart-count" id="cartCount"> 0 </span>
+      </button>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="hero-small">BOHEMIA GOLD • BAKI</div>
+
+        <h1>Kristalın dəbdəbəsi.</h1>
+
+        <p>Eviniz üçün seçilmiş premium kristal, şüşə və dekor kolleksiyası.</p>
+
+        <a href="#shop" class="gold-btn"> Kolleksiyanı kəşf et </a>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+
+    <section class="shop" id="shop">
+      <div class="shop-top">
+        <div>
+          <div class="section-label">Online mağaza</div>
+
+          <h2 class="section-title">Kolleksiya</h2>
+
+          <p class="section-description">
+            Seçilmiş məhsulları səbətə əlavə edin və sifariş formasından
+            göndərin.
+          </p>
+        </div>
+
+        <input
+          class="search"
+          id="search"
+          type="search"
+          placeholder="Məhsul axtar..."
+          oninput="searchProducts()"
+        />
+      </div>
+
+      <div class="categories">
+        <button
+          class="category active"
+          onclick="filterProducts('Hamısı', this)"
+        >
+          Hamısı
+        </button>
+
+        <button class="category" onclick="filterProducts('Güldan', this)">
+          Güldanlar
+        </button>
+
+        <button class="category" onclick="filterProducts('Badə', this)">
+          Badələr
+        </button>
+
+        <button class="category" onclick="filterProducts('Dekor', this)">
+          Dekor
+        </button>
+      </div>
+
+      <div class="products" id="products"></div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+      <div class="about-grid">
+        <img
+          src="https://www.bohemiagoldcrystal.com/img/cms/IMG_20210513_131101.jpg"
+          alt="Bohemia Gold Crystal"
+        />
+
+        <div class="about-text">
+          <div class="section-label">Bohemia Gold</div>
+
+          <h2 class="section-title">Zəriflik detallarda gizlidir.</h2>
+
+          <p>
+            Premium kristal və dekor məhsulları interyerə xüsusi atmosfer
+            qazandırır.
+          </p>
+
+          <p>
+            Bohemia Gold üçün hazırlanmış bu online mağaza müasir, qara-qızılı
+            luxury üslubunda dizayn edilib.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+      <div class="section-label">Əlaqə</div>
+
+      <h2 class="section-title">Mağazamıza gəlin</h2>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <strong> 📍 Ünvan </strong>
+
+            <span> Qara Qarayev prospekti 102, Bakı </span>
+          </div>
+
+          <div class="contact-item">
+            <strong> 📞 Telefon </strong>
+
+            <a href="tel:+994559701318"> +994 55 970 13 18 </a>
+          </div>
+
+          <div class="contact-item">
+            <strong> 📸 Instagram </strong>
+
+            <a href="https://instagram.com/bohemia_gold" target="_blank">
+              @bohemia_gold
+            </a>
+          </div>
+
+          <a
+            class="gold-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Qara+Qarayev+prospekti+102+Baku"
+            target="_blank"
+          >
+            Xəritədə aç
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CART -->
+
+    <div class="cart" id="cart">
+      <div class="cart-header">
+        <h2>Səbətiniz</h2>
+
+        <button class="close" onclick="closeCart()">×</button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+        <span> Cəmi: </span>
+
+        <strong id="cartTotal"> 0.00 ₼ </strong>
+      </div>
+
+      <button class="checkout" onclick="checkout()">
+        Sifarişi rəsmiləşdir
+      </button>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+
+    <div class="modal" id="modal">
+      <div class="modal-box">
+        <h2>Sifariş məlumatları</h2>
+
+        <input id="name" placeholder="Ad və soyad" />
+
+        <input id="phone" placeholder="Telefon nömrəsi" />
+
+        <textarea id="address" placeholder="Çatdırılma ünvanı"></textarea>
+
+        <div class="modal-buttons">
+          <button class="cancel" onclick="closeModal()">Ləğv et</button>
+
+          <button class="submit" onclick="sendOrder()">Sifarişi göndər</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+      <div>© 2026 <span>BOHEMIA GOLD</span></div>
+
+      <div>Qara Qarayev • Bakı</div>
+    </footer>
+
+    <script src="./../JS/bohemiagold.js">
+      /* =========================================
+   MƏHSULLAR
+========================================= */
+
+      const products = [
+        {
+          id: 1,
+          name: "Bohemia Kristal Güldan",
+          category: "Güldan",
+          price: 26.99,
+          image:
+            "https://www.bakuelectronics.az/images/product/2026/bohemia-vase.jpg",
+        },
+
+        {
+          id: 2,
+          name: "Bohemia Gold Bokal Dəsti",
+          category: "Badə",
+          price: 71.99,
+          image:
+            "https://www.bakuelectronics.az/images/product/2026/bohemia-gold-glass.jpg",
+        },
+
+        {
+          id: 3,
+          name: "Kristal Dekor Qabı",
+          category: "Dekor",
+          price: 80,
+          image:
+            "https://www.bohemiagoldcrystal.com/img/cms/IMG_20210513_131101.jpg",
+        },
+
+        {
+          id: 4,
+          name: "Premium Kristal Dəst",
+          category: "Dekor",
+          price: 250,
+          image:
+            "https://www.bohemiagoldcrystal.com/img/cms/IMG_20210513_131101.jpg",
+        },
+      ];
+
+      /* =========================================
+   SƏBƏT
+========================================= */
+
+      let cart = [];
+
+      let selectedCategory = "Hamısı";
+
+      /* =========================================
+   MƏHSULLARI GÖSTƏR
+========================================= */
+
+      function renderProducts() {
+        const container = document.getElementById("products");
+
+        const search = document.getElementById("search").value.toLowerCase();
+
+        container.innerHTML = "";
+
+        products
+          .filter((product) => {
+            const categoryMatch =
+              selectedCategory === "Hamısı" ||
+              product.category === selectedCategory;
+
+            const searchMatch = product.name.toLowerCase().includes(search);
+
+            return categoryMatch && searchMatch;
+          })
+          .forEach((product) => {
+            container.innerHTML += `
+
+            <div class="product">
+
+                <img
+                    class="product-image"
+                    src="${product.image}"
+                    alt="${product.name}"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-category">
+                        ${product.category}
+                    </div>
+
+                    <h3>
+                        ${product.name}
+                    </h3>
+
+                    <div class="price">
+                        ${product.price.toFixed(2)} ₼
+                    </div>
+
+                    <button
+                        class="add"
+                        onclick="addToCart(${product.id})"
+                    >
+                        🛍️ Səbətə əlavə et
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+          });
+      }
+
+      /* =========================================
+   KATEQORİYA
+========================================= */
+
+      function filterProducts(category, button) {
+        selectedCategory = category;
+
+        document
+          .querySelectorAll(".category")
+          .forEach((btn) => btn.classList.remove("active"));
+
+        button.classList.add("active");
+
+        renderProducts();
+      }
+
+      /* =========================================
+   AXTARIŞ
+========================================= */
+
+      function searchProducts() {
+        renderProducts();
+      }
+
+      /* =========================================
+   SƏBƏTƏ ƏLAVƏ ET
+========================================= */
+
+      function addToCart(id) {
+        const product = products.find((p) => p.id === id);
+
+        const existing = cart.find((item) => item.id === id);
+
+        if (existing) {
+          existing.quantity++;
+        } else {
+          cart.push({
+            ...product,
+
+            quantity: 1,
+          });
+        }
+
+        updateCart();
+
+        openCart();
+      }
+
+      /* =========================================
+   SƏBƏTİ YENİLƏ
+========================================= */
+
+      function updateCart() {
+        const container = document.getElementById("cartItems");
+
+        const count = document.getElementById("cartCount");
+
+        const total = document.getElementById("cartTotal");
+
+        container.innerHTML = "";
+
+        let totalPrice = 0;
+
+        let totalQuantity = 0;
+
+        if (cart.length === 0) {
+          container.innerHTML = `
+            <div class="empty">
+                Səbətiniz boşdur.
+            </div>
+        `;
+        }
+
+        cart.forEach((item) => {
+          totalPrice += item.price * item.quantity;
+
+          totalQuantity += item.quantity;
+
+          container.innerHTML += `
+
+            <div class="cart-item">
+
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                >
+
+                <div class="cart-item-info">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <div class="cart-item-price">
+                        ${(item.price * item.quantity).toFixed(2)} ₼
+                    </div>
+
+                    <div class="quantity">
+
+                        <button
+                            onclick="changeQuantity(${item.id},-1)"
+                        >
+                            −
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="changeQuantity(${item.id},1)"
+                        >
+                            +
+                        </button>
+
+                        <button
+                            class="remove"
+                            onclick="removeFromCart(${item.id})"
+                        >
+                            Sil
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `;
+        });
+
+        count.textContent = totalQuantity;
+
+        total.textContent = totalPrice.toFixed(2) + " ₼";
+      }
+
+      /* =========================================
+   MİQDARI DƏYİŞ
+========================================= */
+
+      function changeQuantity(id, amount) {
+        const item = cart.find((item) => item.id === id);
+
+        if (!item) return;
+
+        item.quantity += amount;
+
+        if (item.quantity <= 0) {
+          cart = cart.filter((item) => item.id !== id);
+        }
+
+        updateCart();
+      }
+
+      /* =========================================
+   SİL
+========================================= */
+
+      function removeFromCart(id) {
+        cart = cart.filter((item) => item.id !== id);
+
+        updateCart();
+      }
+
+      /* =========================================
+   CART AÇ
+========================================= */
+
+      function openCart() {
+        document.getElementById("cart").classList.add("open");
+      }
+
+      /* =========================================
+   CART BAĞLA
+========================================= */
+
+      function closeCart() {
+        document.getElementById("cart").classList.remove("open");
+      }
+
+      /* =========================================
+   CHECKOUT
+========================================= */
+
+      function checkout() {
+        if (cart.length === 0) {
+          alert("Əvvəlcə məhsulu səbətə əlavə edin.");
+
+          return;
+        }
+
+        document.getElementById("modal").classList.add("active");
+      }
+
+      /* =========================================
+   MODAL BAĞLA
+========================================= */
+
+      function closeModal() {
+        document.getElementById("modal").classList.remove("active");
+      }
+
+      /* =========================================
+   SİFARİŞ GÖNDƏR
+========================================= */
+
+      function sendOrder() {
+        const name = document.getElementById("name").value;
+
+        const phone = document.getElementById("phone").value;
+
+        const address = document.getElementById("address").value;
+
+        if (!name || !phone || !address) {
+          alert("Zəhmət olmasa bütün məlumatları doldurun.");
+
+          return;
+        }
+
+        let message = "BOHEMIA GOLD SİFARİŞİ%0A%0A";
+
+        message += "Müştəri: " + name + "%0A";
+
+        message += "Telefon: " + phone + "%0A";
+
+        message += "Ünvan: " + address + "%0A%0A";
+
+        message += "Məhsullar:%0A";
+
+        let total = 0;
+
+        cart.forEach((item) => {
+          message +=
+            item.name +
+            " × " +
+            item.quantity +
+            " — " +
+            (item.price * item.quantity).toFixed(2) +
+            " AZN%0A";
+
+          total += item.price * item.quantity;
+        });
+
+        message += "%0ACəmi: " + total.toFixed(2) + " AZN";
+
+        /*
+       BURADA WHATSAPP NÖMRƏSİNİ
+       MAĞAZANIN REAL WHATSAPP NÖMRƏSİ
+       İLƏ DƏYİŞ.
+    */
+
+        const whatsapp = "994559701318";
+
+        window.open("https://wa.me/" + whatsapp + "?text=" + message, "_blank");
+
+        closeModal();
+      }
+
+      /* =========================================
+   BAŞLANĞIC
+========================================= */
+
+      renderProducts();
+
+      updateCart();
+    </script>
+  </body>
+</html>
